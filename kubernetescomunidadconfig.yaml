@@ -1,0 +1,18 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: containersecondary
+spec:
+  selector:
+    matchLabels:
+      app: containersecondary
+  template:
+    metadata:
+      labels:
+        app: containersecondary
+    spec:       
+      containers:
+      - name: containersecondary
+        image: comunidadcontainerregistry.azurecr.io/containersecondary:v1
+        ports:
+          - containerPort: 80
